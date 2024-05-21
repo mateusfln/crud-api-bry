@@ -12,15 +12,16 @@ class Funcionario extends Model
 
     protected $fillable = [
         'id',
+        'empresa_id',
         'login',
         'nome',
         'cpf',
         'email',
-        'endereco', 
+        'endereco',
         'senha'
     ];
 
-    public function empreas(): HasMany
+    public function empresa(): HasMany
     {
         return $this->hasMany(Empresa::class);
     }

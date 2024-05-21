@@ -10,12 +10,12 @@ return new class extends Migration
     {
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->id();
-            $table->string('login');
-            $table->string('nome');
-            $table->string('cpf');
-            $table->string('email');
-            $table->string('endereco');
-            $table->string('senha');
+            $table->string('login', 255);
+            $table->string('nome', 255);
+            $table->string('cpf', 11);
+            $table->string('email', 255);
+            $table->string('endereco', 255);
+            $table->string('senha', 255);
             $table->timestamps();
         });
     }

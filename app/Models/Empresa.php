@@ -13,7 +13,8 @@ class Empresa extends Model
     protected $fillable = [
         'id',
         'nome',
-        'cnpj'
+        'cnpj',
+        'endereco'
     ];
 
     public function funcionario(): HasMany
