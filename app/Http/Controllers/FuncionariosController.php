@@ -34,14 +34,32 @@ class FuncionariosController extends Controller
 
     public function update(Request $request, $id)
     {
-        $funcionario = Funcionario::findOrFail($id);
-        $funcionario->update($request->all());
-        return response()->json($funcionario, 200);
+        if ($this->funcionarioTemEmpresa($id)){
+            FuncionariosEmpresa::where("funcionario_id",$id)->delete();
+        }
+        
+        if (!empty($request->get('empresa_id'))){
+            foreach($request->get('empresa_id') as $empresa){
+                FuncionariosEmpresa::create(['funcionario_id' => $id, 'empresa_id' => $empresa]);
+            }
+        }
+        return response()->json(Funcionario::with('empresas')->findOrFail($id), 200);
     }
 
     public function destroy($id)
     {
+        if ($this->funcionarioTemEmpresa($id)){
+            FuncionariosEmpresa::where("funcionario_id",$id)->delete();
+        }
         Funcionario::findOrFail($id)->delete();
-        return response()->json(['message' => 'Funcionario excluído'], 200);
+        return response()->json(['message' => 'Funcionário excluído com sucesso!'], 200);
+    }
+
+    public function funcionarioTemEmpresa($id): bool
+    {
+        if (!empty(Funcionario::with('empresas')->findOrFail($id)->first()->empresas)){
+            return true;
+        }
+        return false;
     }
 }

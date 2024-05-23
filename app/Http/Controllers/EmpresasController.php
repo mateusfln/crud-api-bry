@@ -33,19 +33,32 @@ class EmpresasController extends Controller
 
     public function update(Request $request, $id)
     {
-        $empresa = Empresa::findOrFail($id);
-        $empresa->update($request->all());
-        return response()->json($empresa, 200);
+        if ($this->empresaTemFuncionario($id)){
+            FuncionariosEmpresa::where("empresa_id",$id)->delete();
+        }
+        
+        if (!empty($request->get('funcionario_id'))){
+            foreach($request->get('funcionario_id') as $funcionario){
+                FuncionariosEmpresa::create(['empresa_id' => $id, 'funcionario_id' => $funcionario]);
+            }
+        }
+        return response()->json(Empresa::with('funcionarios')->findOrFail($id), 200);
     }
 
     public function destroy($id)
     {
-        if (!empty(Empresa::with('funcionarios')->findOrFail($id)->first()->funcionarios)){
-            foreach(Empresa::with('funcionarios')->findOrFail($id)->first()->funcionarios as $funcionario){
-                FuncionariosEmpresa::destroy(['empresa_id' => $id, 'funcionario_id' => $funcionario->id]);
-            }
+        if ($this->empresaTemFuncionario($id)){
+            FuncionariosEmpresa::where("empresa_id",$id)->delete();
         }
         Empresa::findOrFail($id)->delete();
         return response()->json(['message' => 'Empresa excluída com sucesso!'], 200);
+    }
+
+    public function empresaTemFuncionario($id): bool
+    {
+        if (!empty(Empresa::with('funcionarios')->findOrFail($id)->first()->funcionarios)){
+            return true;
+        }
+        return false;
     }
 }
