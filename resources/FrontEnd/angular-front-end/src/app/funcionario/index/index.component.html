@@ -1,0 +1,61 @@
+<div class="container">
+
+    <h1>Angular 17 CRUD</h1>
+
+    
+
+    <a href="#" routerLink="/funcionario/create/" class="btn btn-success">Create New Funcionario</a>
+
+      
+
+    <table class="table table-striped">
+
+        <thead>
+
+              <tr>
+
+                <th>ID</th>
+
+                <th>login</th>
+
+                <th>nome</th>
+                <th>cpf</th>
+                <th>email</th>
+                <th>endereço</th>
+                <th>senha</th>
+
+                <th width="250px">Action</th>
+
+              </tr>
+
+        </thead>
+
+        <tbody>
+
+              <tr *ngFor="let funcionario of funcionarios">
+
+                <td>{{ funcionario.id }}</td>
+                <td>{{ funcionario.login }}</td>
+                <td>{{ funcionario.nome }}</td>
+                <td>{{ funcionario.cpf }}</td>
+                <td>{{ funcionario.email }}</td>
+                <td>{{ funcionario.endereco }}</td>
+                <td>{{ funcionario.senha }}</td>
+
+                <td>
+
+                  <a href="#" [routerLink]="['/funcionario/', funcionario.id, 'view']" class="btn btn-info">View</a>
+
+                  <a href="#" [routerLink]="['/funcionario/', funcionario.id, 'edit']" class="btn btn-primary">Edit</a>
+
+                  <button type="button" (click)="deleteFuncionario(funcionario.id)" class="btn btn-danger">Delete</button>
+
+                </td>
+
+              </tr>
+
+        </tbody>
+
+    </table>
+
+ </div>

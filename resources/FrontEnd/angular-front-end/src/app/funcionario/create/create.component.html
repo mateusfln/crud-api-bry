@@ -1,0 +1,40 @@
+<div class="container">
+
+    <h1>Create New Funcionario</h1>
+
+    <a href="#" routerLink="/funcionario/index" class="btn btn-primary">Back</a>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-group">
+
+            <label for="login">Login:</label>
+
+            <input 
+                formControlName="login"
+                id="login" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['login'].touched && f['login'].invalid" class="alert alert-danger">
+                <div *ngIf="f['login'].errors && f['login'].errors['required']">Login is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="nome">nome</label>
+            <input
+                formControlName="nome"
+                id="nome" 
+                type="text" 
+                class="form-control">
+        </input>
+            <div *ngIf="f['nome'].touched && f['nome'].invalid" class="alert alert-danger">
+                <div *ngIf="f['nome'].errors && f['nome'].errors['required']">Nome is required.</div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+
+    </form>
+
+</div>
