@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Funcionario extends Model
 {
@@ -12,7 +11,6 @@ class Funcionario extends Model
 
     protected $fillable = [
         'id',
-        'empresa_id',
         'login',
         'nome',
         'cpf',
@@ -21,8 +19,8 @@ class Funcionario extends Model
         'senha'
     ];
 
-    public function empresa(): HasMany
+    public function empresas()
     {
-        return $this->hasMany(Empresa::class);
+        return $this->belongsToMany(Empresa::class, 'funcionarios_empresas', 'funcionario_id', 'empresa_id');        // return $this->belongsToMany(Empresa::class);
     }
 }

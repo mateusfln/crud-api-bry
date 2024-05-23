@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EmpresasController;
 use App\Http\Controllers\FuncionariosController;
+use App\Http\Controllers\FuncionariosEmpresasController;
 use Illuminate\Support\Facades\Route;
 
 /**
@@ -32,6 +33,22 @@ Route::post('/empresas', [EmpresasController::class, 'store']);
 Route::put('/empresas/{id}', [EmpresasController::class, 'update']);
 
 Route::delete('/empresas/{id}', [EmpresasController::class, 'destroy']);
+/**
+ * End Rotas de empresas
+ */
+
+  /**
+ * Start Rotas FuncionariosEmpresas
+ */
+Route::get('/funcionariosempresas', [FuncionariosEmpresasController::class, 'index']);
+
+Route::get('/funcionariosempresas/{funcionarioId}/{empresaId}', [FuncionariosEmpresasController::class, 'show']);
+
+Route::post('/funcionariosempresas', [FuncionariosEmpresasController::class, 'store']);
+
+Route::put('/funcionariosempresas/{funcionarioId}/{empresaId}', [FuncionariosEmpresasController::class, 'update']);
+
+Route::delete('/funcionariosempresas/{funcionarioId}/{empresaId}', [FuncionariosEmpresasController::class, 'destroy']);
 /**
  * End Rotas de empresas
  */

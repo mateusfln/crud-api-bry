@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Empresa extends Model
 {
@@ -17,8 +16,7 @@ class Empresa extends Model
         'endereco'
     ];
 
-    public function funcionario(): HasMany
+    public function funcionarios()
     {
-        return $this->hasMany(Funcionario::class);
-    }
+        return $this->belongsToMany(Funcionario::class, 'funcionarios_empresas', 'empresa_id', 'funcionario_id');    }
 }
