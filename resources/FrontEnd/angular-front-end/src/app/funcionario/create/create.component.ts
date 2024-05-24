@@ -20,7 +20,7 @@ import { Empresa } from '../../empresa/empresa';
 
 })
 
-export class CreateComponent {
+export class funcionarioCreateComponent {
 
   form!: FormGroup;
 

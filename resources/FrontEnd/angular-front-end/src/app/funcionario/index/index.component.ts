@@ -18,7 +18,7 @@ import { Funcionario } from '../funcionario';
 
 })
 
-export class IndexComponent {
+export class funcionarioIndexComponent {
   
   funcionarios: Funcionario[] = [];
 

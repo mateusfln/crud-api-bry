@@ -1,1 +1,49 @@
-<p>view works!</p>
+<div class="container">
+    <h1>View Empresa</h1>
+    <a href="empresa" routerLink="/empresa/index" class="btn btn-primary">Back</a>
+    <div class="row">
+        <div class="border col-6 my-2">
+            <strong>ID:</strong>
+            <p>{{ empresa.id }}</p>
+        </div>
+        <div class="border col-6 my-2">
+            <strong>Nome:</strong>
+            <p>{{ empresa.nome }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="border col-6 my-2">
+            <strong>Endereço:</strong>
+            <p>{{ empresa.endereco }}</p>
+        </div>
+        <div class="border col-6 my-2">
+            <strong>Cnpj:</strong>
+            <p>{{ empresa.cnpj }}</p>
+        </div>
+    </div>
+    <div *ngIf="empresa.funcionarios.length > 0">
+        <h1>Funcionarios Vinculados</h1>
+        <table class="table table-striped">
+            <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>login</th>
+                    <th>nome</th>
+                    <th>Cpf</th>
+                    <th>email</th>
+                    <th>endereço</th>
+                  </tr>
+            </thead>
+            <tbody>
+                    <tr *ngFor="let funcionario of empresa.funcionarios">
+                      <td>{{ funcionario['id'] }}</td>
+                      <td>{{ funcionario['login'] }}</td>
+                      <td>{{ funcionario['nome'] }}</td>
+                      <td>{{ funcionario['cpf'] }}</td>
+                      <td>{{ funcionario['email'] }}</td>
+                      <td>{{ funcionario['endereco'] }}</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+</div>

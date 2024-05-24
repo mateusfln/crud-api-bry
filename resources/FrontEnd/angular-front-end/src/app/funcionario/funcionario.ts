@@ -7,4 +7,5 @@ export interface Funcionario {
     endereco: string;
     senha: string;
     empresa_id: [];
+    empresas: [];
 }

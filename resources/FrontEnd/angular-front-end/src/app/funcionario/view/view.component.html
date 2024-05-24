@@ -1,8 +1,61 @@
 <div class="container">
     <h1>View Funcionario</h1>
-    <a href="#" routerLink="/funcionario/index" class="btn btn-primary">Back</a>
-    <div>
-        <strong>ID:</strong>
-        <p>{{ funcionario.id }}</p>
+    <a href="funcionario" routerLink="/funcionario/index" class="btn btn-primary">Back</a>
+    <div class="row">
+        <div class="border col-6 my-2 gap-1">
+            <strong>ID:</strong>
+            <p>{{ funcionario.id }}</p>
+        </div>
+        <div class="border col-6 my-2">
+            <strong>Login:</strong>
+            <p>{{ funcionario.login }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="border col-6 my-2 gap-1">
+            <strong>Nome:</strong>
+            <p>{{ funcionario.nome }}</p>
+        </div>
+        <div class="border col-6 my-2">
+            <strong>Cpf:</strong>
+            <p>{{ funcionario.cpf }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="border col-6 my-2 gap-1">
+            <strong>Email:</strong>
+            <p>{{ funcionario.email }}</p>
+        </div>
+        <div class="border col-6 my-2">
+            <strong>Senha:</strong>
+            <p>{{ funcionario.senha }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="border col-12 my-2">
+            <strong>Endereço:</strong>
+            <p>{{ funcionario.endereco }}</p>
+        </div>
+    </div>
+    <div *ngIf="funcionario.empresas.length > 0">
+    <h1>Empresas Relacionadas</h1>
+    <table class="table table-striped">
+        <thead>
+              <tr>
+                <th>ID</th>
+                <th>nome</th>
+                <th>Cnpj</th>
+                <th>endereço</th>
+              </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let empresa of funcionario.empresas; let i = index">
+                  <td>{{ empresa['id'] }}</td>
+                  <td>{{ empresa['nome'] }}</td>
+                  <td>{{ empresa['cnpj'] }}</td>
+                  <td>{{ empresa['endereco'] }}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

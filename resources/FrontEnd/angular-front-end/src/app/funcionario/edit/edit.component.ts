@@ -17,7 +17,7 @@ import { EmpresaService } from '../../empresa/empresa.service';
   styleUrl: './edit.component.css'
 })
 
-export class EditComponent {
+export class funcionarioEditComponent {
 
   id!: number;
 

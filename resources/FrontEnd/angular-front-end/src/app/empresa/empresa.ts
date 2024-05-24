@@ -3,4 +3,5 @@ export interface Empresa {
     nome: string;
     cnpj: string;
     endereco: string;
+    funcionarios: [];
 }

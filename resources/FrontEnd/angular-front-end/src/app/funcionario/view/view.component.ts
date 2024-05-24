@@ -2,16 +2,17 @@ import { Component } from '@angular/core';
 import { FuncionarioService } from '../funcionario.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Funcionario } from '../funcionario';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-view',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './view.component.html',
   styleUrl: './view.component.css'
 })
 
-export class ViewComponent {
+export class funcionarioViewComponent {
 
   id!: number;
   funcionario!: Funcionario;

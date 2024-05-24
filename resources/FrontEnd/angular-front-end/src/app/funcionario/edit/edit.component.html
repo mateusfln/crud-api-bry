@@ -84,7 +84,7 @@
             <label for="empresas">empresas:</label>
                 <div class="form-check">
                     <div *ngFor="let empresa of empresas; let i = index">
-                        <input class="form-check-input" type="checkbox" value="{{ empresa.id }}" id="empresa-{{ empresa.id }}" name="empresa_id" (change)="onCheckboxChange(empresa.id, $event.target.checked)" [checked]="funcionario.empresa_id.includes(empresa.id)">
+                        <input class="form-check-input" type="checkbox" value="{{ empresa.id }}" id="empresa-{{ empresa.id }}" name="empresa_id" (change)="onCheckboxChange(empresa.id, $event.target.checked)">
                         <label class="form-check-label" for="empresa-{{ empresa.id }}"> {{ empresa.nome }} </label>
                     </div>
                 </div>

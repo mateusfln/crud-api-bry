@@ -20,7 +20,7 @@ import { Funcionario } from '../../funcionario/funcionario';
 
 })
 
-export class CreateComponent {
+export class empresaCreateComponent {
 
   form!: FormGroup;
 
@@ -37,9 +37,9 @@ export class CreateComponent {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      nome: new FormControl('', [Validators.required]),
-      cpf: new FormControl('', [Validators.required]),
-      endereco: new FormControl('', [Validators.required]),
+      nome: new FormControl('', [Validators.required, Validators.pattern(/[^a-zA-Z0-9]+/g)]),
+      cnpj: new FormControl('', [Validators.required]),
+      endereco: new FormControl('', [Validators.required, Validators.pattern(/[^a-zA-Z0-9]+/g)]),
     });
 
       this.funcionarioService.getAll().subscribe((data: Funcionario[])=>{
