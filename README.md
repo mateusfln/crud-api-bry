@@ -73,7 +73,3 @@ ng serve
 ```
 http://localhost:4200
 ```
-- **src/**: Diretório contendo os arquivos PHP da aplicação organizados utilizando a arquitetura MVC (Model, View, Controler).
-- **docker-compose.yml**: Arquivo de configuração do Docker Compose para criar e gerenciar os contêineres da aplicação.
-- **Dockerfile**: Arquivo utilizado para sobrescrever uma imagem ja existente e instalar algumas dependencias necessárias.
-- **site.conf**: Arquivo utilizado para organizar as configurações do site (Nginx, arquivos padrão e etc).
