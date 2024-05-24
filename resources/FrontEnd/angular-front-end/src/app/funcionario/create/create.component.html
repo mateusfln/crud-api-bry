@@ -5,11 +5,8 @@
     <a href="#" routerLink="/funcionario/index" class="btn btn-primary">Back</a>
 
     <form [formGroup]="form" (ngSubmit)="submit()">
-
         <div class="form-group">
-
             <label for="login">Login:</label>
-
             <input 
                 formControlName="login"
                 id="login" 
@@ -21,20 +18,76 @@
         </div>
 
         <div class="form-group">
-            <label for="nome">nome</label>
-            <input
+            <label for="nome">Nome:</label>
+            <input 
                 formControlName="nome"
                 id="nome" 
                 type="text" 
                 class="form-control">
-        </input>
             <div *ngIf="f['nome'].touched && f['nome'].invalid" class="alert alert-danger">
                 <div *ngIf="f['nome'].errors && f['nome'].errors['required']">Nome is required.</div>
             </div>
         </div>
 
+        <div class="form-group">
+            <label for="cpf">Cpf:</label>
+            <input 
+                formControlName="cpf"
+                id="cpf" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['cpf'].touched && f['cpf'].invalid" class="alert alert-danger">
+                <div *ngIf="f['cpf'].errors && f['cpf'].errors['required']">cpf is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">email:</label>
+            <input 
+                formControlName="email"
+                id="email" 
+                type="email" 
+                class="form-control">
+            <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                <div *ngIf="f['email'].errors && f['email'].errors['required']">email is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="endereco">endereco:</label>
+            <input 
+                formControlName="endereco"
+                id="endereco" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['endereco'].touched && f['endereco'].invalid" class="alert alert-danger">
+                <div *ngIf="f['endereco'].errors && f['endereco'].errors['required']">endereco is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="senha">senha:</label>
+            <input 
+                formControlName="senha"
+                id="senha" 
+                type="password" 
+                class="form-control">
+            <div *ngIf="f['senha'].touched && f['senha'].invalid" class="alert alert-danger">
+                <div *ngIf="f['senha'].errors && f['senha'].errors['required']">senha is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group" *ngIf="empresas.length > 0">
+            <label for="empresas">empresas:</label>
+                <div class="form-check">
+                    <div *ngFor="let empresa of empresas; let i = index">
+                        <input class="form-check-input" type="checkbox" value="{{ empresa.id }}" id="empresa-{{ empresa.id }}" name="empresa_id" (change)="onCheckboxChange(empresa.id, $event.target.checked)">
+                        <label class="form-check-label" for="empresa-{{ empresa.id }}"> {{ empresa.nome }} </label>
+                    </div>
+                </div>
+        </div>
+
         <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
 
     </form>
-
 </div>

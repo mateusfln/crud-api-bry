@@ -25,7 +25,6 @@ export class IndexComponent {
   constructor(public funcionarioService: FuncionarioService) { }
 
   ngOnInit(): void {
-
     this.funcionarioService.getAll().subscribe((data: Funcionario[])=>{
       this.funcionarios = data;
       console.log(this.funcionarios);

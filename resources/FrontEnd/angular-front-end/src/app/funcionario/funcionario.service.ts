@@ -22,13 +22,14 @@ import { Funcionario } from './funcionario';
 
 export class FuncionarioService {
 
-  private apiURL = "https://jsonplaceholder.typicode.com";
+  private apiURL = "http://127.0.0.1/api/v1/funcionarios";
 
   httpOptions = {
 
     headers: new HttpHeaders({
 
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
 
     })
 
@@ -38,7 +39,7 @@ export class FuncionarioService {
 
   getAll(): Observable<any> {
 
-    return this.httpClient.get(this.apiURL + '/Funcionarios/')
+    return this.httpClient.get(this.apiURL)
 
     .pipe(
       catchError(this.errorHandler)
@@ -47,20 +48,18 @@ export class FuncionarioService {
   }
 
   create(Funcionario:Funcionario): Observable<any> {
-
-    return this.httpClient.post(this.apiURL + '/Funcionarios/', JSON.stringify(Funcionario), this.httpOptions)
+    console.log('funcionario: ',Funcionario);
+    return this.httpClient.post(this.apiURL, JSON.stringify(Funcionario), this.httpOptions)
 
     .pipe(
-
       catchError(this.errorHandler)
-
     )
 
   }  
 
   find(id:number): Observable<any> {
 
-    return this.httpClient.get(this.apiURL + '/funcionarios/' + id)
+    return this.httpClient.get(this.apiURL + '/' + id)
 
     .pipe(
       catchError(this.errorHandler)
@@ -70,7 +69,7 @@ export class FuncionarioService {
 
   update(id:number, Funcionario:Funcionario): Observable<any> {
 
-    return this.httpClient.put(this.apiURL + '/funcionarios/' + id, JSON.stringify(Funcionario), this.httpOptions)
+    return this.httpClient.put(this.apiURL + '/' + id, JSON.stringify(Funcionario), this.httpOptions)
 
     .pipe( 
       catchError(this.errorHandler)
@@ -80,7 +79,7 @@ export class FuncionarioService {
 
   delete(id:number){
 
-    return this.httpClient.delete(this.apiURL + '/Funcionarios/' + id, this.httpOptions)
+    return this.httpClient.delete(this.apiURL + '/' + id, this.httpOptions)
 
     .pipe(
       catchError(this.errorHandler)
