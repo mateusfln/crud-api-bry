@@ -73,24 +73,6 @@ ng serve
 ```
 http://localhost:4200
 ```
-
-## Estrutura do Projeto
-
-A estrutura do projeto está organizada da seguinte forma:
-
-```
-/
-|-- www/
-|   |-- src/
-|      |-- config/
-|      |-- Controller/
-|      |-- Model/
-|      |-- View/
-|-- docker-compose.yml
-|-- Dockerfile
-|-- site.conf
-```
-- **www/**: Diretório mapeado no Nginx para conter o projeto e disponibilizar na web).
 - **src/**: Diretório contendo os arquivos PHP da aplicação organizados utilizando a arquitetura MVC (Model, View, Controler).
 - **docker-compose.yml**: Arquivo de configuração do Docker Compose para criar e gerenciar os contêineres da aplicação.
 - **Dockerfile**: Arquivo utilizado para sobrescrever uma imagem ja existente e instalar algumas dependencias necessárias.
