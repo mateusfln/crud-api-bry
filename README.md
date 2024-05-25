@@ -44,6 +44,8 @@ composer update
 ./vendor/bin/sail artisan migrate
 ```
 
+8. Acesse o arquivo do postman [aqui](https://github.com/mateusfln/crud-api-bry/blob/main/CRUD-Funcionarios-bry.postman_collection.json)
+
 ## Como Executar o Projeto (Front-end)
 
 1. Entre no front-end do projeto:
