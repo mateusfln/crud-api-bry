@@ -1,6 +1,6 @@
 # Teste Técnico Estagiário Bry - API CRUD de Funcionários e Empresas
 
-Este é um teste técnico proposto pela Bry para avaliar conhecimentos e habilidades no desenvolvimento de uma aplicação web API CRUD (Create, Read, Update, Delete) de funcionários e empresas utilizando Laravel no back-end e Angular no front-end.
+Este é um teste técnico, proposto pela Bry, para avaliar conhecimentos e habilidades no desenvolvimento de uma aplicação web API CRUD (Create, Read, Update, Delete), de funcionários e empresas, utilizando Laravel no back-end e Angular no front-end.
 
 ## Descrição do Projeto
 
