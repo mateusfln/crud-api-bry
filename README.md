@@ -22,29 +22,29 @@ O objetivo deste projeto é Implementar uma API REST para realizar o gerenciamen
 git clone https://github.com/mateusfln/crud-api-bry.git
 ```
 
-3. Navegue até o diretório do projeto:
+2. Navegue até o diretório do projeto:
 
 ```
 cd crud-api-bry
 ```
-4. instale as dependencias do composer no projeto
+3. instale as dependencias do composer no projeto
 
 ```
 composer update
 ```
-5. Inicie os contêineres Docker do laravel:
+4. Inicie os contêineres Docker do laravel:
 
 ```
 ./vendor/bin/sail up
 ```
 
-7. Rode os arquivos de migrations para criar as tabelas e colunas no banco de dados:
+5. Rode os arquivos de migrations para criar as tabelas e colunas no banco de dados:
 
 ```
 ./vendor/bin/sail artisan migrate
 ```
 
-8. Acesse o arquivo do postman [aqui](https://github.com/mateusfln/crud-api-bry/blob/main/CRUD-Funcionarios-bry.postman_collection.json)
+6. Acesse o arquivo do postman [aqui](https://github.com/mateusfln/crud-api-bry/blob/main/CRUD-Funcionarios-bry.postman_collection.json)
 
 ## Como Executar o Projeto (Front-end)
 
@@ -65,13 +65,13 @@ npm install
 npm install -g @angular/cli
 ```
 
-3. Inicie front-end:
+4. Inicie front-end:
 
 ```
 ng serve
 ```
 
-8. Acesse o endereço:
+5. Acesse o endereço:
 
 ```
 http://localhost:4200/funcionario // para o index de funcionarios
