@@ -14,14 +14,10 @@ O objetivo deste projeto é Implementar uma API REST para realizar o gerenciamen
 - **Javascript**: Linguagem de programação utilizada para o desenvolvimento da aplicação (front-end).
 - **MySQL**: Sistema de gerenciamento de banco de dados relacional utilizado para armazenar as informações dos funcionários e empresas.
 - **Docker**: Plataforma de contêineres que facilita a criação, distribuição e execução de aplicativos em contêineres.
-- **Docker Compose**: Ferramenta que auxilia na orquestragem de multiplos containeres docker ao mesmo tempo.
-
+- 
 ## Como Executar o Projeto (API)
 
-1. Certifique-se de ter o Docker instalado em sua máquina e também o Docker compose. Você pode baixar o Docker [aqui](https://www.docker.com/get-started) e o docker compose [aqui](https://docs.docker.com/compose/install/).
-
-2. Clone este repositório em sua máquina local:
-
+1. Certifique-se de ter o Docker instalado em sua máquina e também o Docker compose. Você pode baixar o Docker [aqui](https://www.docker.com/get-started).
 ```
 git clone https://github.com/mateusfln/crud-api-bry.git
 ```
@@ -61,6 +57,11 @@ cd resoursces/FrontEnd/angular-front-end
 ```
 npm install
 ```
+3. instale o angular cli no projeto
+
+```
+npm install -g @angular/cli
+```
 
 3. Inicie front-end:
 
@@ -71,5 +72,8 @@ ng serve
 8. Acesse o endereço:
 
 ```
-http://localhost:4200
+http://localhost:4200/funcionario // para o index de funcionarios
+```
+```
+http://localhost:4200/empresa // para o index de empresa
 ```
