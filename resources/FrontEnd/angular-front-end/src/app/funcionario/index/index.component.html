@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Lista de funcionários</h1>
-    <a href="#" routerLink="/funcionario/create/" class="btn btn-success">Create New Funcionario</a>
+    <a href="funcionario" routerLink="/funcionario/create/" class="btn btn-success">Criar Novo Funcionario</a>
     <table class="table table-striped">
         <thead>
               <tr>
@@ -10,8 +10,7 @@
                 <th>cpf</th>
                 <th>email</th>
                 <th>endereço</th>
-                <th>senha</th>
-                <th width="250px">Action</th>
+                <th width="250px">Ações</th>
               </tr>
         </thead>
         <tbody>
@@ -22,11 +21,10 @@
                 <td>{{ funcionario.cpf }}</td>
                 <td>{{ funcionario.email }}</td>
                 <td>{{ funcionario.endereco }}</td>
-                <td>{{ funcionario.senha }}</td>
                 <td>
-                  <a href="#" [routerLink]="['/funcionario/', funcionario.id, 'view']" class="btn btn-info">View</a>
-                  <a href="#" [routerLink]="['/funcionario/', funcionario.id, 'edit']" class="btn btn-primary">Edit</a>
-                  <button type="button" (click)="deleteFuncionario(funcionario.id)" class="btn btn-danger">Delete</button>
+                  <a href="#" [routerLink]="['/funcionario/', funcionario.id, 'view']" class="btn btn-info">Visializar</a>
+                  <a href="#" [routerLink]="['/funcionario/', funcionario.id, 'edit']" class="btn btn-primary">Editar</a>
+                  <button type="button" (click)="deleteFuncionario(funcionario.id)" class="btn btn-danger">Excluir</button>
                 </td>
               </tr>
         </tbody>
