@@ -16,7 +16,6 @@
             />
             <div *ngIf="f['nome'].touched && f['nome'].invalid" class="alert alert-danger">
               <div *ngIf="f['nome'].errors?.['required']">Nome é obrigatório.</div>
-              <div *ngIf="f['nome'].errors?.['pattern']">Nome não pode conter caracteres especiais.</div>
             </div>
           </div>
 

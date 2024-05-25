@@ -1,1 +1,47 @@
-<p>edit works!</p>
+<div class="container">
+    <h1>Update empresa</h1>
+    <a href="#" routerLink="/empresa/index" class="btn btn-primary">Back</a>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input 
+                formControlName="nome"
+                id="nome" 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="empresa.nome">
+            <div *ngIf="f['nome'].touched && f['nome'].invalid" class="alert alert-danger">
+                <div *ngIf="f['nome'].errors && f['nome'].errors['required']">Nome is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="cnpj">Cnpj:</label>
+            <input 
+                formControlName="cnpj"
+                id="cnpj" 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="empresa.cnpj">
+            <div *ngIf="f['cnpj'].touched && f['cnpj'].invalid" class="alert alert-danger">
+                <div *ngIf="f['cnpj'].errors && f['cnpj'].errors['required']">Cnpj is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="endereco">endereco:</label>
+            <input 
+                formControlName="endereco"
+                id="endereco" 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="empresa.endereco">
+            <div *ngIf="f['endereco'].touched && f['endereco'].invalid" class="alert alert-danger">
+                <div *ngIf="f['endereco'].errors && f['endereco'].errors['required']">endereco is required.</div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+    </form>
+</div>

@@ -37,9 +37,9 @@ export class empresaCreateComponent {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      nome: new FormControl('', [Validators.required, Validators.pattern(/[^a-zA-Z0-9]+/g)]),
+      nome: new FormControl('', [Validators.required]),
       cnpj: new FormControl('', [Validators.required]),
-      endereco: new FormControl('', [Validators.required, Validators.pattern(/[^a-zA-Z0-9]+/g)]),
+      endereco: new FormControl('', [Validators.required]),
     });
 
       this.funcionarioService.getAll().subscribe((data: Funcionario[])=>{
